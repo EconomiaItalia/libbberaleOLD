@@ -1,4 +1,3 @@
-
 questions =  [
     {"id": 0, "question": "La produttività è il miglior modo con cui una società possa prosperare.", "effects": {"right": 1}},
     {"id": 1, "question": "La beneficienza è un modo migliore di aiutare i poveri rispetto all'assistenza sociale.", "effects": {"right": 1}},
