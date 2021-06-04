@@ -36,5 +36,4 @@ questions =  [
     {"id": 34, "question": "I genitori dovrebbero insegnare ai propri figli a rispettare la disciplina anche con l'uso della forza quando necessario.", "effects": {"prog": -1}},
     {"id": 35, "question": "Dovremmo stare tutti solo con i nostri simili.", "effects": {"prog": -1}}
     {"id": 36, "question": "", "effects": {"prog": 1}},
-
 ]; 
