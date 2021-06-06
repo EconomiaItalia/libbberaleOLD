@@ -61,6 +61,10 @@
 		var test_result = c.getContext("2d");
 		test_result.beginPath();
 		test_result.arc(200 + (1000 * (x_axis+10 + 2)/20), 1150 - (1000 * (y_axis + 10 + 2)/20), 75, 0, 2 * Math.PI);
+		test_result.lineWidth = 100;
+		test_result.strokeStyle = 'black';
+		test_result.stroke();
+		    
 		var test_img = new Image();
 		test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
 		test_img.onload = function() {
