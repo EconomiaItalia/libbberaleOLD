@@ -41,8 +41,8 @@
 		
 	    var imageArray = [test_img,background];
 		
-	    var loadImages = function(imageURLarray, currentIndex){
-	    	if (imageURLarray.length == 0 || imageURLarray.length == currentIndex) {
+	    var loadImages = function(currentIndex){
+	    	if (imageArray.length == currentIndex) {
 			var c = document.createElement("canvas");
 			c.width = 1850;
 			c.height = 1600;
@@ -105,12 +105,12 @@
 	    	else if (typeof currentIndex == 'undefined'){
 	       	    currentIndex = 0;
 		}
-		imageURLarray[currentIndex].onload = function(e){
-		    loadImages(imageArray, currentIndex++);
+		imageArray[currentIndex].onload = function(e){
+		    loadImages(currentIndex++);
 		}
 	    };
 	    
-	    loadImages(imageArray);
+	    loadImages(0);
         }
         </script>
     </body>
