@@ -31,16 +31,16 @@
         y_axis  = parseFloat(urlParams.get("auth"))
         z_axis  = parseFloat(urlParams.get("prog"))
     
-        window.onload = function() {
-	    var c = document.createElement("canvas");
-            c.width = 1850;
-            c.height = 1600;	
+        window.onload = function() {	
 		
 	    var test_img = new Image();
 	    test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
 
             var background = new Image();
             background.onload = function() {
+		var c = document.createElement("canvas");
+            	c.width = 1850;
+            	c.height = 1600;
                 
                 var ctx = c.getContext("2d");
                 ctx.fillStyle = "#EEEEEE"
@@ -71,9 +71,8 @@
                 ctx.textAlign="right"
                 ctx.font="60px Montserrat"
                 ctx.fillText("SapplyValues.github.io", 1820, 1560)
-    
-                document.getElementById("banner").src = c.toDataURL();
-		
+		   
+				
 		//prova visualizzazione cerchio con immagine
 		var pos_x = 200 + (1000 * (x_axis+10 + 2)/20);
 		var pos_y = 1150 - (1000 * (y_axis + 10 + 2)/20);
@@ -95,7 +94,8 @@
 	    	test_result.restore();
 		    
 		//FINE    
-               
+
+                document.getElementById("banner").src = c.toDataURL();
             }
             background.src = "./compass.png";
         }
