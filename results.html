@@ -39,7 +39,11 @@
 
             var background = new Image();
             background.onload = function() {
-		var c = document.createElement("canvas");
+		
+            }
+            background.src = "./compass.png";
+	
+	    var c = document.createElement("canvas");
             	c.width = 1850;
             	c.height = 1600;
                 
@@ -105,8 +109,6 @@
 		//FINE    
 
                 document.getElementById("banner").src = c.toDataURL();
-            }
-            background.src = "./compass.png";
         }
         </script>
     </body>
