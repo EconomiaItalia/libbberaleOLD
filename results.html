@@ -63,7 +63,7 @@
 		test_result.arc(200 + (1000 * (x_axis+10 + 2)/20), 1150 - (1000 * (y_axis + 10 + 2)/20), 75, 0, 2 * Math.PI);
 		var test_img = new Image();
 		test_img.src = "https://upload.wikimedia.org/wikipedia/commons/8/87/Symbol_thumbs_up.svg";
-                var pattern test_result.createPattern(test_img, "no-repeat");
+                var pattern = test_result.createPattern(test_img, "no-repeat");
                 test_result.fillStyle = pattern;
                 test_result.fill();
     
