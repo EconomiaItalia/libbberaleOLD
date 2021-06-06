@@ -56,6 +56,14 @@
                 line.lineWidth = 10;
                 line.strokeStyle = "red";
                 line.stroke();
+		    
+		//prova visualizzazione cerchio con immagine
+		var test_result = c.getContext("2d");
+		test_result.beginPath();
+		test_result.arc(200 + (1000 * (x_axis+10 + 2)/20), 1150 - (1000 * (y_axis + 10 + 2)/20), 75, 0, 2 * Math.PI);
+                test_result.fillStyle = 'blue';
+                test_result.fill();
+                test_result.stroke();
     
                 ctx.font="50px Montserrat"
                 ctx.textAlign="center"
