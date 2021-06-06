@@ -38,29 +38,7 @@
 		
 	    var test_img = new Image();
 	    test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
-	    test_img.onload = function(){
-		//prova visualizzazione cerchio con immagine
-		var pos_x = 200 + (1000 * (x_axis+10 + 2)/20);
-		var pos_y = 1150 - (1000 * (y_axis + 10 + 2)/20);
-		var circle_radius = 60;
-		   
-		var test_result = c.getContext("2d");
-		test_result.save();
-		test_result.beginPath();
-		test_result.arc(pos_x, pos_y, circle_radius, 0, 2 * Math.PI);
-		test_result.closePath();
-		test_result.clip();
-		    
-		test_result.drawImage(test_img, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
 
-	    	test_result.beginPath();
-	    	test_result.arc(pos_x - circle_radius, pos_y - circle_radius, circle_radius, 0, 2 * Math.PI);
-	    	test_result.clip();
-	    	test_result.closePath();
-	    	test_result.restore();
-		    
-		//FINE    
-	    };
             var background = new Image();
             background.onload = function() {
                 
@@ -84,7 +62,27 @@
                 line.strokeStyle = "red";
                 line.stroke();
 		    
-		
+		//prova visualizzazione cerchio con immagine
+		var pos_x = 200 + (1000 * (x_axis+10 + 2)/20);
+		var pos_y = 1150 - (1000 * (y_axis + 10 + 2)/20);
+		var circle_radius = 60;
+		   
+		var test_result = c.getContext("2d");
+		test_result.save();
+		test_result.beginPath();
+		test_result.arc(pos_x, pos_y, circle_radius, 0, 2 * Math.PI);
+		test_result.closePath();
+		test_result.clip();
+		    
+		test_result.drawImage(test_img, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
+
+	    	test_result.beginPath();
+	    	test_result.arc(pos_x - circle_radius, pos_y - circle_radius, circle_radius, 0, 2 * Math.PI);
+	    	test_result.clip();
+	    	test_result.closePath();
+	    	test_result.restore();
+		    
+		//FINE    
                
     
                 ctx.font="50px Montserrat"
