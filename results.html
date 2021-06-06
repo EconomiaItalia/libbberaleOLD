@@ -61,11 +61,11 @@
 		var test_result = c.getContext("2d");
 		test_result.beginPath();
 		test_result.arc(200 + (1000 * (x_axis+10 + 2)/20), 1150 - (1000 * (y_axis + 10 + 2)/20), 75, 0, 2 * Math.PI);
-                test_result.fillStyle = 'blue';
-                test_result.fill();
 		var test_img = new Image();
 		test_img.src = "https://upload.wikimedia.org/wikipedia/commons/8/87/Symbol_thumbs_up.svg";
-                test_result.drawImage(test_img,0,0);
+                var pattern test_result.createPattern(test_img, "no-repeat");
+                test_result.fillStyle = pattern;
+                test_result.fill();
     
                 ctx.font="50px Montserrat"
                 ctx.textAlign="center"
