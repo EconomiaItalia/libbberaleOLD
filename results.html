@@ -59,13 +59,19 @@
 		    
 		//prova visualizzazione cerchio con immagine
 		var test_result = c.getContext("2d");
-		var test_img = new Image();
-		test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
                 var pattern = test_result.createPattern(test_img, "no-repeat");
                 test_result.fillStyle = pattern;
 		test_result.beginPath();
 		test_result.arc(200 + (1000 * (x_axis+10 + 2)/20), 1150 - (1000 * (y_axis + 10 + 2)/20), 75, 0, 2 * Math.PI);
-                test_result.fill();
+		var test_img = new Image();
+		test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
+		test_img.onload = function() {
+			test_result.save();
+			test_result.globalCompositeOperation = 'source-in';
+		    	test_result.drawImage(test_img, 0, 0);
+		    	test_result.restore();
+		};
+               
     
                 ctx.font="50px Montserrat"
                 ctx.textAlign="center"
