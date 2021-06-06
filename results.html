@@ -65,8 +65,8 @@
 		test_result.arc(200 + (1000 * (x_axis+10 + 2)/20), 1150 - (1000 * (y_axis + 10 + 2)/20), 75, 0, 2 * Math.PI);
 		test_result.fill();
 		
-		test_result.globalCompositeOperation = 'source-in';
-		test_result.drawImage(test_img,200 + (1000 * (x_axis+10 + 2)/20), 1150 - (1000 * (y_axis + 10 + 2)/20));
+		test_result.globalCompositeOperation = 'source-atop';
+		test_result.drawImage(test_img,-(200 + (1000 * (x_axis+10 + 2)/20))+75, -(1150 - (1000 * (y_axis + 10 + 2)/20))+ 75);
 		test_result.globalCompositeOperation = 'source-over';
                
     
