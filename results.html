@@ -26,15 +26,7 @@
 	
     
     <script>
-	function sleep(milliseconds) {
-	  const date = Date.now();
-	  let currentDate = null;
-	  do {
-	    currentDate = Date.now();
-	  } while (currentDate - date < milliseconds);
-	}    
-	    
-	    
+
         const urlParams = new URLSearchParams(window.location.search);
         x_axis  = parseFloat(urlParams.get("right"))
         y_axis  = parseFloat(urlParams.get("auth"))
@@ -101,7 +93,7 @@
 			test_result.drawImage(test_img, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
 			loading = false;
 		}else{
-			sleep(100);
+			console.log("22");
 		}}
 
 	    	test_result.beginPath();
