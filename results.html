@@ -31,17 +31,14 @@
         x_axis  = parseFloat(urlParams.get("right"))
         y_axis  = parseFloat(urlParams.get("auth"))
         z_axis  = parseFloat(urlParams.get("prog"))
+	
+	var test_img = new Image();
+	test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
+
+        var background = new Image();
+        background.src = "./compass.png";
     
         window.onload = function() {	
-		
-	    var test_img = new Image();
-	    test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
-
-            var background = new Image();
-            background.onload = function() {
-		
-            }
-            background.src = "./compass.png";
 	
 	    var c = document.createElement("canvas");
             	c.width = 1850;
