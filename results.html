@@ -63,11 +63,14 @@
 		var test_result = c.getContext("2d");
 		test_result.beginPath();
 		test_result.arc(200 + (1000 * (x_axis+10 + 2)/20), 1150 - (1000 * (y_axis + 10 + 2)/20), 60, 0, 2 * Math.PI);
+		    
+		var pattern = test_result.createPattern(test_img,"no-repeat");
+		test_result.fillStyle = pattern;
 		test_result.fill();
 		
-		test_result.globalCompositeOperation = 'source-atop';
-		test_result.drawImage(test_img,200 + (1000 * (x_axis+10 + 2)/20) -60, 1150 - (1000 * (y_axis + 10 + 2)/20)-60);
-		test_result.globalCompositeOperation = 'source-over';
+		//test_result.globalCompositeOperation = 'source-atop';
+		//test_result.drawImage(test_img,200 + (1000 * (x_axis+10 + 2)/20) -60, 1150 - (1000 * (y_axis + 10 + 2)/20)-60);
+		//test_result.globalCompositeOperation = 'source-over';
                
     
                 ctx.font="50px Montserrat"
