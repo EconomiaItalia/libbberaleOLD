@@ -62,6 +62,18 @@
                 line.strokeStyle = "red";
                 line.stroke();
 		    
+                ctx.font="50px Montserrat"
+                ctx.textAlign="center"
+                ctx.fillStyle="#222222"
+                ctx.fillText("Left / Right Axis (x): " + x_axis, 725, 1375)
+                ctx.fillText("Auth / Lib Axis (y): " + y_axis, 725, 1450)
+                ctx.fillText("Prog / Con Axis (z): " + z_axis, 725, 1525)
+                ctx.textAlign="right"
+                ctx.font="60px Montserrat"
+                ctx.fillText("SapplyValues.github.io", 1820, 1560)
+    
+                document.getElementById("banner").src = c.toDataURL();
+		
 		//prova visualizzazione cerchio con immagine
 		var pos_x = 200 + (1000 * (x_axis+10 + 2)/20);
 		var pos_y = 1150 - (1000 * (y_axis + 10 + 2)/20);
@@ -71,7 +83,6 @@
 		test_result.save();
 		test_result.beginPath();
 		test_result.arc(pos_x, pos_y, circle_radius, 0, 2 * Math.PI);
-		test_result.stroke();
 		test_result.closePath();
 		test_result.clip();
 		    
@@ -85,18 +96,6 @@
 		    
 		//FINE    
                
-    
-                ctx.font="50px Montserrat"
-                ctx.textAlign="center"
-                ctx.fillStyle="#222222"
-                ctx.fillText("Left / Right Axis (x): " + x_axis, 725, 1375)
-                ctx.fillText("Auth / Lib Axis (y): " + y_axis, 725, 1450)
-                ctx.fillText("Prog / Con Axis (z): " + z_axis, 725, 1525)
-                ctx.textAlign="right"
-                ctx.font="60px Montserrat"
-                ctx.fillText("SapplyValues.github.io", 1820, 1560)
-    
-                document.getElementById("banner").src = c.toDataURL();
             }
             background.src = "./compass.png";
         }
