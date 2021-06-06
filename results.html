@@ -67,10 +67,10 @@
 		test_result.strokeStyle = 'black';
 		test_result.stroke();
 		
-		test_result.save();
-		test_result.globalCompositeOperation = 'source-atop';
+		//test_result.save();
+		test_result.globalCompositeOperation = 'source-in';
 		test_result.drawImage(test_img, 0, 0);
-		test_result.restore();
+		//test_result.restore();
                
     
                 ctx.font="50px Montserrat"
