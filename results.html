@@ -61,12 +61,22 @@
 		    
 		//prova visualizzazione cerchio con immagine
 		var test_result = c.getContext("2d");
+		test_result.save();
 		test_result.beginPath();
 		test_result.arc(200 + (1000 * (x_axis+10 + 2)/20), 1150 - (1000 * (y_axis + 10 + 2)/20), 60, 0, 2 * Math.PI);
+		test_result.closePath();
+		test_result.clip();
 		    
-		var pattern = test_result.createPattern(test_img,"no-repeat");
-		test_result.fillStyle = pattern;
-		test_result.fill();
+		test_result.drawImage(test_img, 0, 0, 120, 120);
+
+	    	test_result.beginPath();
+	    	test_result.arc(200 + (1000 * (x_axis+10 + 2)/20) - 60, 1150 - (1000 * (y_axis + 10 + 2)/20) - 60, 60, 0, 2 * Math.PI);
+	    	test_result.clip();
+	    	test_result.closePath();
+	    	test_result.restore();    
+		//var pattern = test_result.createPattern(test_img,"no-repeat");
+		//test_result.fillStyle = pattern;
+		//test_result.fill();
 		
 		//test_result.globalCompositeOperation = 'source-atop';
 		//test_result.drawImage(test_img,200 + (1000 * (x_axis+10 + 2)/20) -60, 1150 - (1000 * (y_axis + 10 + 2)/20)-60);
