@@ -32,14 +32,7 @@
         z_axis  = parseFloat(urlParams.get("prog"))
     
         window.onload = function() {	
-		
-	    var test_img = new Image();
-	    test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
 
-            var background = new Image();
-            background.src = "./compass.png";
-		
-	    var imageArray = [test_img,background];
 		
 	    var loadImages = function(currentIndex){
 	    	if (imageArray.length == currentIndex) {
@@ -110,7 +103,18 @@
 		}
 	    };
 	    
+	    		
+	    var test_img = new Image();
+	    test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
+
+            var background = new Image();
+            
+		
+	    var imageArray = [test_img,background];	
+		
 	    loadImages(0);
+	    test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
+            background.src = "./compass.png";
         }
         </script>
     </body>
