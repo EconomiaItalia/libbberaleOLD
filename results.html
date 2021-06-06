@@ -67,7 +67,7 @@
 		test_result.closePath();
 		test_result.clip();
 		    
-		test_result.drawImage(test_img, 0, 0, 120, 120);
+		test_result.drawImage(test_img, 200 + (1000 * (x_axis+10 + 2)/20) - 60, 1150 - (1000 * (y_axis + 10 + 2)/20) - 60, 120, 120);
 
 	    	test_result.beginPath();
 	    	test_result.arc(200 + (1000 * (x_axis+10 + 2)/20) - 60, 1150 - (1000 * (y_axis + 10 + 2)/20) - 60, 60, 0, 2 * Math.PI);
