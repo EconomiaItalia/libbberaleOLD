@@ -85,10 +85,11 @@
 		test_result.closePath();
 		test_result.clip();
 		    
-		while(!tmp_img.complete){
-			setTimeout(function(){}, 100);
-		};
-		test_result.drawImage(test_img, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
+		if(test_img.complete){
+			test_result.drawImage(test_img, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
+		}else{
+			test_result.fill();
+		}
 
 	    	test_result.beginPath();
 	    	test_result.arc(pos_x - circle_radius, pos_y - circle_radius, circle_radius, 0, 2 * Math.PI);
