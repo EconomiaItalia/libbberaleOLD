@@ -32,32 +32,26 @@
         y_axis  = parseFloat(urlParams.get("auth"))
         z_axis  = parseFloat(urlParams.get("prog"))
 	
-        var background = new Image();
-        background.src = "./compass.png";
+	results.push({"nome": "background", "image":"./compass.png", "x_axis": 0, "y_axis": 0});
 	    
 	function loadImages(sources, callback) {
-		var images = {};
 		var loadedImages = 0;
 		var numImages = 0;
 		// get num of sources
-		for(var src in sources) {
+		for(var res in results) {
 		  numImages++;
 		}
-		for(var src in sources) {
-		  images[src] = new Image();
-		  images[src].onload = function() {
+		for(var res in results) {
+		  results[src]["imageObj"] = new Image();
+		  results[src]["imageObj"].onload = function() {
 		    if(++loadedImages >= numImages) {
-		      callback(images);
+		      callback(results);
 		    }
 		  };
-		 images[src].src = sources[src];
+		 results[src]["imageObj"].src = results[src]["image"];
 		}
 	}
 	
-        var sources = {
-	  image1: './img/Gaia Zorzi.svg',
-	  image2: './img/Gaia Zorzi.svg'
-        };
 	var c = document.createElement("canvas");
         c.width = 1850;
         c.height = 1600;
@@ -99,8 +93,11 @@
                 ctx.font="60px Montserrat"
                 ctx.fillText("SapplyValues.github.io", 1820, 1560)
 		
-		ctx.drawImage(images.image1,1000,1000, 120, 120);
-		ctx.drawImage(images.image2,1000,600, 120, 120);
+		for(var res in results){
+		    var pos_x = 200 + (1000 * (res["x_axis"] + 60)/20);
+		    var pos_y = 1150 - (1000 * (res["y_axis"] + 60)/20);	
+		    ctx.drawImage(res["imageObj"], pos_x, pos_y, 120, 120);
+		}
 		   		    
 		//FINE    
 		document.getElementById("banner").src = c.toDataURL();
