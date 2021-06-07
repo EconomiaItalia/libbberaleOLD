@@ -87,7 +87,8 @@
 		var test_result2 = c.getContext("2d");
 
 		
-		ctx.drawImage(test_img2, pos_x2 - circle_radius2, pos_y2- circle_radius2, circle_radius2 * 2, circle_radius2 * 2);
+		setTimeout(function(){ctx.drawImage(test_img2, pos_x2 - circle_radius2, pos_y2- circle_radius2, circle_radius2 * 2, circle_radius2 * 2);},3000);
+		
 
 		    		
 		//prova visualizzazione cerchio con immagine
@@ -104,7 +105,7 @@
 				//prova visualizzazione cerchio con immagine
 
 		//FINE    
-
+			
                 document.getElementById("banner").src = c.toDataURL();
         }
         </script>
