@@ -90,7 +90,9 @@
 			test_result.arc(pos_x - circle_radius, pos_y - circle_radius, circle_radius, 0, 2 * Math.PI);
 			test_result.clip();
 			test_result.closePath();
+			test_result.fill();
 			test_result.restore();
+			
 		});	
 		
 		var dot = c.getContext("2d");
