@@ -35,8 +35,8 @@
 
 	results.forEach(function(res) {
 		var tmp_image = new Image();
-		tmp_image.src = res[1];
-		res[1] = tmp_image;
+		tmp_image.src = res["image"];
+		res["image"] = tmp_image;
 	});
 	
 	var test_img = new Image();
