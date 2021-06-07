@@ -65,13 +65,7 @@
         var ctx = c.getContext("2d");
 	    
 	loadImages(sources, function(images) {
-		ctx.drawImage(images.image1, 100, 30, 120, 120);
-		ctx.drawImage(images.image2, 350, 55, 120, 120);
-        });
-    
-        window.onload = function() {	
-	
-	    var c = document.createElement("canvas");
+		var c = document.createElement("canvas");
             	c.width = 1850;
             	c.height = 1600;
                 
@@ -104,10 +98,12 @@
                 ctx.textAlign="right"
                 ctx.font="60px Montserrat"
                 ctx.fillText("SapplyValues.github.io", 1820, 1560)
+		
+		ctx.drawImage(images.image1,1000,1000, 120, 120);
 		   		    
 		//FINE    
-		setTimeout(function(){document.getElementById("banner").src = c.toDataURL();},10000);
-                
-        }
+		document.getElementById("banner").src = c.toDataURL();
+        });
+    
         </script>
     </body>
