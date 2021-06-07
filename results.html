@@ -32,15 +32,37 @@
         y_axis  = parseFloat(urlParams.get("auth"))
         z_axis  = parseFloat(urlParams.get("prog"))
 	
-
-       results.forEach(function(res) {
-		var tmp_image = new Image();
-		tmp_image.src = res["image"];
-		res["image"] = tmp_image;
-	});
-
         var background = new Image();
         background.src = "./compass.png";
+	    
+	function loadImages(sources, callback) {
+        var images = {};
+        var loadedImages = 0;
+        var numImages = 0;
+        // get num of sources
+        for(var src in sources) {
+          numImages++;
+        }
+        for(var src in sources) {
+          images[src] = new Image();
+          images[src].onload = function() {
+            if(++loadedImages >= numImages) {
+              callback(images);
+            }
+          };
+          images[src].src = sources[src];
+        }
+      }
+	
+      var sources = {
+        image1: './img/Gaia Zorzi.svg',
+        image2: './img/Gaia Zorzi.svg'
+      };
+	    
+	loadImages(sources, function(images) {
+		context.drawImage(images.image1, 100, 30, 120, 120);
+		context.drawImage(images.image2, 350, 55, 120, 120);
+        });
     
         window.onload = function() {	
 	
@@ -77,21 +99,7 @@
                 ctx.textAlign="right"
                 ctx.font="60px Montserrat"
                 ctx.fillText("SapplyValues.github.io", 1820, 1560)
-		   
-
-		var i;
-		var pos_x;
-		var pos_y;
-		var img;
-		var circle_radius = 60;
-		var test_result = c.getContext("2d");
-		for(i=0; i< results.length; i++){
-			pos_x = 200 + (1000 * (results[i]["x_axis"]+30)/20);
-			pos_y = 1150 - (1000 * (results[i]["y_axis"] + 30)/20);
-			test_result.drawImage(results[i]["image"], pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
-			
-		}
-		    
+		   		    
 		//FINE    
 		setTimeout(function(){document.getElementById("banner").src = c.toDataURL();},10000);
                 
