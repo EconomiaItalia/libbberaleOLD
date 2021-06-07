@@ -24,13 +24,20 @@
     <p style="text-align:center;margin:-2px auto">Hint: you can download this image directly. No need to screenshot!</p></br>
     <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
 	
-    
+    <script type="application/javascript" src="results.js"></script>
     <script>
 
         const urlParams = new URLSearchParams(window.location.search);
         x_axis  = parseFloat(urlParams.get("right"))
         y_axis  = parseFloat(urlParams.get("auth"))
         z_axis  = parseFloat(urlParams.get("prog"))
+	
+
+	results.forEach(function(res) {
+		var tmp_image = new Image();
+		tmp_image.src = res[1];
+		res[1] = tmp_image;
+	});
 	
 	var test_img = new Image();
 	test_img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/16777216colors.png/100px-16777216colors.png";
