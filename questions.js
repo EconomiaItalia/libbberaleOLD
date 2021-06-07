@@ -13,7 +13,7 @@ questions =  [
     {"id": 11, "question": "Nel mondo le diseguaglianze sono troppo alte, sia in termini assoluti, che in termini relativi, inoltre queste a livello mondiale aumentano da sempre.", "effects": {"right": -1}},
     {"id": 12, "question": "Il mondo del lavoro dovrebbe essere categorizzato in base al sesso, infatti le donne eccellono in mansioni proprie delle stesse, ed è quindi sbagliato incentivare l’uno o l’altro sesso verso lavori verso in cui non hanno affinità.", "effects": {"auth": 1}},
     {"id": 13, "question": "Un governo autoritario dotato di una moralità salda è una soluzione più efficiente ed efficace rispetto alla democrazia.", "effects": {"auth": 1}},
-    {"id": 14, "question": "Il potere va gestito secondo i precetti di Macchiavelli espressi nel De Principatibus.", "effects": {"auth": 1}},
+    {"id": 14, "question": "Il potere va gestito secondo i precetti di Machiavelli espressi nel De Principatibus.", "effects": {"auth": 1}},
     {"id": 15, "question": "Solo il governo può regolare in modo equo ed efficace le organizzazioni.", "effects": {"auth": 1}},
     {"id": 16, "question": "La lentezza della burocrazia non è un costo necessario.", "effects": {"auth": -1}},
     {"id": 17, "question": "In tempi di crisi, la sicurezza diventa più importante delle libertà civili.", "effects": {"auth": 1}},
