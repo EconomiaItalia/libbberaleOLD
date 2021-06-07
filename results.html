@@ -70,13 +70,6 @@
 		background = results.pop();
                 ctx.drawImage(background["imageObj"], 0, 0);
     
-                var dot = c.getContext("2d");
-                dot.beginPath();
-                dot.arc(200 + (1000 * (x_axis + 10)/20), 1150 - (1000 * (y_axis + 10)/20), 25, 0, 2 * Math.PI);
-                dot.fillStyle = 'red';
-                dot.fill();
-                dot.stroke();
-    
                 var line = c.getContext("2d");
                 line.beginPath();
                 line.moveTo(1500, 1145 - (1000 * (z_axis + 10)/20));
@@ -102,6 +95,13 @@
 		    pos_y = 1150 - (1000 * (parseFloat(results[res]["y_axis"]) + 10)/20);	
 		    ctx.drawImage(results[res]["imageObj"], pos_x - 50, pos_y - 50, 100, 100);
 		}
+		
+		var dot = c.getContext("2d");
+                dot.beginPath();
+                dot.arc(200 + (1000 * (x_axis + 10)/20), 1150 - (1000 * (y_axis + 10)/20), 25, 0, 2 * Math.PI);
+                dot.fillStyle = 'blue';
+                dot.fill();
+                dot.stroke();
 		   		    
 		//FINE    
 		document.getElementById("banner").src = c.toDataURL();
