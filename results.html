@@ -77,7 +77,25 @@
                 ctx.font="60px Montserrat"
                 ctx.fillText("SapplyValues.github.io", 1820, 1560)
 		   
-				
+		var pos_x2 = 200 + (1000 * (x_axis+60 + 2)/20);
+		var pos_y2 = 1150 - (1000 * (y_axis + 60 + 2)/20);
+		var circle_radius2 = 60;
+		   
+		var test_result2 = c.getContext("2d");
+		test_result2.save();
+		test_result2.beginPath();
+		test_result2.arc(pos_x2, pos_y2, circle_radius, 0, 2 * Math.PI);
+		test_result2.closePath();
+		test_result2.clip();
+		
+		test_result2.drawImage(test_img2, pos_x2 - circle_radius, pos_y2- circle_radius, circle_radius * 2, circle_radius * 2);
+
+	    	test_result2.beginPath();
+	    	test_result2.arc(pos_x2 - circle_radius, pos_y2 - circle_radius, circle_radius, 0, 2 * Math.PI);
+	    	test_result2.clip();
+	    	test_result2.closePath();
+	    	test_result2.restore();
+		    		
 		//prova visualizzazione cerchio con immagine
 		var pos_x = 200 + (1000 * (x_axis+10 + 2)/20);
 		var pos_y = 1150 - (1000 * (y_axis + 10 + 2)/20);
@@ -99,25 +117,7 @@
 	    	test_result.restore();
 		
 				//prova visualizzazione cerchio con immagine
-		var pos_x2 = 200 + (1000 * (x_axis+60 + 2)/20);
-		var pos_y2 = 1150 - (1000 * (y_axis + 60 + 2)/20);
-		var circle_radius2 = 60;
-		   
-		var test_result2 = c.getContext("2d");
-		test_result2.save();
-		test_result2.beginPath();
-		test_result2.arc(pos_x2, pos_y2, circle_radius, 0, 2 * Math.PI);
-		test_result2.closePath();
-		test_result2.clip();
-		
-		test_result2.drawImage(test_img2, pos_x2 - circle_radius, pos_y2- circle_radius, circle_radius * 2, circle_radius * 2);
 
-	    	test_result2.beginPath();
-	    	test_result2.arc(pos_x2 - circle_radius, pos_y2 - circle_radius, circle_radius, 0, 2 * Math.PI);
-	    	test_result2.clip();
-	    	test_result2.closePath();
-	    	test_result2.restore();
-		    
 		//FINE    
 
                 document.getElementById("banner").src = c.toDataURL();
