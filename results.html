@@ -36,31 +36,31 @@
         background.src = "./compass.png";
 	    
 	function loadImages(sources, callback) {
-        var images = {};
-        var loadedImages = 0;
-        var numImages = 0;
-        // get num of sources
-        for(var src in sources) {
-          numImages++;
-        }
-        for(var src in sources) {
-          images[src] = new Image();
-          images[src].onload = function() {
-            if(++loadedImages >= numImages) {
-              callback(images);
-            }
-          };
-          images[src].src = sources[src];
-        }
-      }
+		var images = {};
+		var loadedImages = 0;
+		var numImages = 0;
+		// get num of sources
+		for(var src in sources) {
+		  numImages++;
+		}
+		for(var src in sources) {
+		  images[src] = new Image();
+		  images[src].onload = function() {
+		    if(++loadedImages >= numImages) {
+		      callback(images);
+		    }
+		  };
+		 images[src].src = sources[src];
+		}
+	}
 	
-      var sources = {
-        image1: './img/Gaia Zorzi.svg',
-        image2: './img/Gaia Zorzi.svg'
-      };
+        var sources = {
+	  image1: './img/Gaia Zorzi.svg',
+	  image2: './img/Gaia Zorzi.svg'
+        };
 	var c = document.createElement("canvas");
-            	c.width = 1850;
-            	c.height = 1600;
+        c.width = 1850;
+        c.height = 1600;
                 
         var ctx = c.getContext("2d");
 	    
@@ -100,6 +100,7 @@
                 ctx.fillText("SapplyValues.github.io", 1820, 1560)
 		
 		ctx.drawImage(images.image1,1000,1000, 120, 120);
+		ctx.drawImage(images.image2,1000,600, 120, 120);
 		   		    
 		//FINE    
 		document.getElementById("banner").src = c.toDataURL();
