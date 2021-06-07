@@ -96,9 +96,9 @@
                 ctx.fillText("SapplyValues.github.io", 1820, 1560)
 		
 		for(var res in results){
-		    var pos_x = 200 + (1000 * (res["x_axis"] + 60)/20);
-		    var pos_y = 1150 - (1000 * (res["y_axis"] + 60)/20);	
-		    ctx.drawImage(results[res]["imageObj"], 1000, 1000, 120, 120);
+		    var pos_x = 200 + (1000 * (results[res]["x_axis"] + 60)/20);
+		    var pos_y = 1150 - (1000 * (results[res]["y_axis"] + 60)/20);	
+		    ctx.drawImage(results[res]["imageObj"], pos_x, pos_y, 120, 120);
 		}
 		   		    
 		//FINE    
