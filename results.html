@@ -58,10 +58,15 @@
         image1: './img/Gaia Zorzi.svg',
         image2: './img/Gaia Zorzi.svg'
       };
+	var c = document.createElement("canvas");
+            	c.width = 1850;
+            	c.height = 1600;
+                
+        var ctx = c.getContext("2d");
 	    
 	loadImages(sources, function(images) {
-		context.drawImage(images.image1, 100, 30, 120, 120);
-		context.drawImage(images.image2, 350, 55, 120, 120);
+		ctx.drawImage(images.image1, 100, 30, 120, 120);
+		ctx.drawImage(images.image2, 350, 55, 120, 120);
         });
     
         window.onload = function() {	
