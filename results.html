@@ -78,9 +78,9 @@
 		var img;
 		var circle_radius = 60;
 		for(i=0; i< results.length; i++){
-			pos_x = 200 + (1000 * (res["x_axis"]+30)/20);
-			pos_y = 1150 - (1000 * (res["y_axis"] + 30)/20);
-			img = res["image"];
+			pos_x = 200 + (1000 * (results[i]["x_axis"]+30)/20);
+			pos_y = 1150 - (1000 * (results[i]["y_axis"] + 30)/20);
+			img = results[i]["image"];
 
 			arr[i] = c.getContext("2d");
 			arr[i].save();
