@@ -42,13 +42,13 @@
 		  numImages++;
 		}
 		for(var res in results) {
-		  results[src]["imageObj"] = new Image();
-		  results[src]["imageObj"].onload = function() {
+		  results[res]["imageObj"] = new Image();
+		  results[res]["imageObj"].onload = function() {
 		    if(++loadedImages >= numImages) {
 		      callback(results);
 		    }
 		  };
-		 results[src]["imageObj"].src = results[src]["image"];
+		 results[res]["imageObj"].src = results[res]["image"];
 		}
 	}
 	
