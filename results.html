@@ -38,6 +38,9 @@
 		tmp_image.src = res["image"];
 		res["image"] = tmp_image;
 	});
+	    
+	var prova = new Image();
+	prova.src = "./img/Gaia Zorzi.svg";
 
         var background = new Image();
         background.src = "./compass.png";
@@ -98,6 +101,25 @@
 			arr[i].restore();
 			
 		}
+		
+		pos_x = 200 + (1000 * (results[0]["x_axis"]+30)/20);
+		pos_y = 1150 - (1000 * (results[0]["y_axis"] + 30)/20);
+		img = prova;
+
+		var cont = c.getContext("2d");
+		cont.save();
+		cont.beginPath();
+		cont.arc(pos_x, pos_y, circle_radius, 0, 2 * Math.PI);
+		cont.closePath();
+		cont.clip();
+
+		cont.drawImage(img, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
+
+		cont.beginPath();
+		cont.arc(pos_x - circle_radius, pos_y - circle_radius, circle_radius, 0, 2 * Math.PI);
+		cont.clip();
+		cont.closePath();
+		cont.restore();
 
 		var dot = c.getContext("2d");
                 dot.beginPath();
