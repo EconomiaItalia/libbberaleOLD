@@ -34,6 +34,9 @@
 	
 	var test_img = new Image();
 	test_img.src = "./img/Gaia Zorzi.svg";
+	    
+	var test_img2 = new Image();
+	test_img2.src = "./img/Gaia Zorzi.svg";
 
         var background = new Image();
         background.src = "./compass.png";
@@ -107,7 +110,7 @@
 		test_result2.closePath();
 		test_result2.clip();
 		
-		test_result2.drawImage(test_img, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
+		test_result2.drawImage(test_img2, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
 
 	    	test_result2.beginPath();
 	    	test_result2.arc(pos_x - circle_radius, pos_y - circle_radius, circle_radius, 0, 2 * Math.PI);
