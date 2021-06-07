@@ -70,30 +70,35 @@
                 ctx.textAlign="right"
                 ctx.font="60px Montserrat"
                 ctx.fillText("SapplyValues.github.io", 1820, 1560)
-		   
-		results.forEach(function(res) {
-			var pos_x = 200 + (1000 * (res["x_axis"]+30)/20);
-			var pos_y = 1150 - (1000 * (res["y_axis"] + 30)/20);
-			var img = res["image"];
-			var circle_radius = 60;
+		  
+		var arr;
+		var i;
+		var pos_x;
+		var pos_y;
+		var img;
+		var circle_radius = 60;
+		for(i=0; i< results.length; i++){
+			pos_x = 200 + (1000 * (res["x_axis"]+30)/20);
+			pos_y = 1150 - (1000 * (res["y_axis"] + 30)/20);
+			img = res["image"];
 
-			var test_result = c.getContext("2d");
-			test_result.save();
-			test_result.beginPath();
-			test_result.arc(pos_x, pos_y, circle_radius, 0, 2 * Math.PI);
-			test_result.closePath();
-			test_result.clip();
+			arr[i] = c.getContext("2d");
+			arr[i].save();
+			arr[i].beginPath();
+			arr[i].arc(pos_x, pos_y, circle_radius, 0, 2 * Math.PI);
+			arr[i].closePath();
+			arr[i].clip();
 
-			test_result.drawImage(img, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
+			arr[i].drawImage(img, pos_x - circle_radius, pos_y - circle_radius, circle_radius * 2, circle_radius * 2);
 
-			test_result.beginPath();
-			test_result.arc(pos_x - circle_radius, pos_y - circle_radius, circle_radius, 0, 2 * Math.PI);
-			test_result.clip();
-			test_result.closePath();
-			test_result.restore();
+			arr[i].beginPath();
+			arr[i].arc(pos_x - circle_radius, pos_y - circle_radius, circle_radius, 0, 2 * Math.PI);
+			arr[i].clip();
+			arr[i].closePath();
+			arr[i].restore();
 			
-		});	
-		
+		}
+
 		var dot = c.getContext("2d");
                 dot.beginPath();
                 dot.arc(200 + (1000 * (x_axis+10)/20), 1150 - (1000 * (y_axis + 10)/20), 25, 0, 2 * Math.PI);
