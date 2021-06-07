@@ -45,7 +45,7 @@
 		  results[res]["imageObj"] = new Image();
 		  results[res]["imageObj"].onload = function() {
 		    if(++loadedImages >= numImages) {
-		      callback(results);
+		      callback();
 		    }
 		  };
 		 results[res]["imageObj"].src = results[res]["image"];
